@@ -1,3 +1,11 @@
+"""
+services.camsservice
+~~~~~~~~~~~~~~
+
+This module contains a class to process CAMS transactions
+
+"""
+
 from argparse import Namespace
 from typing import Self
 
@@ -7,6 +15,7 @@ from utils.dates import get_timestamp
 
 
 class CamsService(TransactionService):
+    """Class to process Zerodha transactions"""
 
     _FIRST_ROW: int = 1
     _NAME_COL: int = 5

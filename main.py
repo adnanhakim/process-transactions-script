@@ -12,6 +12,7 @@ from argparse import ArgumentParser, ArgumentTypeError, Namespace, _SubParsersAc
 
 from services.CamsService import CamsService
 from services.KfintechService import KfintechService
+from services.ZerodhaService import ZerodhaService
 from utils import logger
 
 parser = ArgumentParser(
@@ -29,7 +30,7 @@ parser_process: ArgumentParser = subparsers.add_parser(
 
 parser_process.add_argument(
     "company",
-    choices=["cams", "kfintech"],
+    choices=["cams", "kfintech", "zerodha"],
     help="name of brokerage or repository",
 )
 
@@ -71,6 +72,8 @@ if command == "process":
         CamsService(args).execute()
     elif args.company == "kfintech":
         KfintechService(args).execute()
+    elif args.company == "zerodha":
+        ZerodhaService(args).execute()
 else:
     raise ArgumentTypeError(
         f"Unsupported command '{args.command}'. Run --help for more information."

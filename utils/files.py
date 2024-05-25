@@ -49,6 +49,8 @@ def write_list_to_excel(data: list[list[str]], workbook_name: str, sheet_name: s
             sheet.append(row)
 
         workbook.save(workbook_name)
+
+        logging.info("Saved to %s", workbook_name)
     except Exception as e:
         logging.error("An error occurred: %s", e)
         return []

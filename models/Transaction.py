@@ -22,8 +22,8 @@ class Transaction:
     _qty: Decimal
     _buy_date: datetime
     _buy_price: Decimal
-    _sell_date: datetime
-    _sell_price: Decimal
+    _sell_date: datetime | None
+    _sell_price: Decimal | None
 
     def __init__(
         self: Self,

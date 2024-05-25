@@ -1,3 +1,11 @@
+"""
+services.kfintechservice
+~~~~~~~~~~~~~~
+
+This module contains a class to process KFintech transactions
+
+"""
+
 from argparse import Namespace
 from typing import Self
 
@@ -7,6 +15,7 @@ from utils.dates import get_timestamp
 
 
 class KfintechService(TransactionService):
+    """Class to process KFintech transactions"""
 
     _FIRST_ROW: int = 1
     _NAME_COL: int = 4
